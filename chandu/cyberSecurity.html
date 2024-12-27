@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Courses</title>
+<style>
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+header {
+    background-color: #f7f7f7;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header input[type="text"] {
+    padding: 8px;
+    width: 300px;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 10px 5px;
+    cursor: pointer;
+}
+
+.sidebar .active {
+    background-color: #007bff;
+    color: white;
+}
+
+.courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.course-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: 400px;
+    width: 300px;
+}
+
+.course-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.course-card h3 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.course-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+.course-card button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.course-card button:first-of-type {
+    background-color: #007bff;
+    color: white;
+}
+
+.course-card button:last-of-type {
+    background-color: #28a745;
+    color: white;
+}
+.coursesbtn{
+    border: none;
+    
+} 
+.coursesbtn:hover {
+  background-color: lightblue;
+  
+}
+.coursesbtn.active {
+    background-color: blue;
+    color: white;}
+
+</style>
+<script>
+    const courses = [
+    {
+        title: "Introduction to Cyber Security",
+        rating: "4.2",
+        learners: "269.5K",
+        duration: "5 hrs",
+        certificate: "Completion Certificate",
+        img: "3824032.jpg"
+    },
+    {
+        title: "Introduction to Cloud Security",
+        rating: "4.9",
+        learners: "72K",
+        duration: "2 hrs",
+        certificate: "Completion Certificate",
+        img: "medium-shot-man-holding-device_23-2149192120.avif"
+    },
+    {
+        title: " Network Security  ",
+        rating: "4.5",
+        learners: "42K",
+        duration: "6 hrs",
+        certificate: "Completion Certificate",
+        img: "cyber-security-concept_53876-90451.avif"
+    },
+    {
+        title: "Bug Bouty  ",
+        rating: "4.6",
+        learners: "31K",
+        duration: "4 hrs",
+        certificate: "Completion Certificate",
+        img: "businessman-logging-his-tablet_53876-102029.avif"
+    },
+   
+];
+
+
+
+function loadCourses() {
+    const courseContainer = document.querySelector('.courses');
+    courseContainer.innerHTML = '';
+
+    courses.forEach(course => {
+        const courseCard = document.createElement('div');
+        courseCard.className = 'course-card';
+        courseCard.innerHTML = `
+            <img src="${course.img}" alt="${course.title}">
+            <h3>${course.title}</h3>
+            <p>¸ ${course.rating} 
+ ${course.learners} Learners ' ${course.duration}</p>
+            <p>${course.certificate}</p>
+            <button>View Course</button>
+            <button>Start Learning</button>
+        `;
+        courseContainer.appendChild(courseCard);
+    });
+}
+
+document.querySelectorAll('.coursesbtn').forEach(button => {
+    button.addEventListener('click', () => {
+
+        document.querySelectorAll('.coursesbtn').forEach(btn => btn.classList.remove('active'));
+  
+        button.classList.add('active');
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', loadCourses);
+
+</script>
+</head>
+<body>
+    </header>
+    
+    
+    <div class="container">
+            <main class="courses">
+            <div class="course-card">
+                <img src="3824032.jpg" alt="Course Image">
+                <h3>Introduction to Cyber Security</h3>
+                <p> 4.6 f 269.5K Learners  2 hrs</p>
+                <p>Completion Certificate</p>
+                <button>View Course</button>
+                <button>Start Learning</button>
+            </div>
+            <div class="course-card">
+                <img src="https://via.placeholder.com/150" alt="Course Image">
+                <h3>Introduction to Cloud Security</h3>
+                <p>. 4.6  32K Learners * 7 hrs</p>
+                <p>Completion Certificate</p>
+                <button>View Course</button>
+                <button>Start Learning</button>
+            </div>
+            <div class="course-card">
+                <img src="https://via.placeholder.com/150" alt="Course Image">
+                <h3>Ethical Hacking Using Python </h3>
+                <p> 4.6 > 32K Learners { 24 hrs</p>
+                <p>Completion Certificate</p>
+                <button>View Course</button>
+                <button>Start Learning</button>
+            </div>
+            <div class="course-card">
+                <img src="https://via.placeholder.com/150" alt="Course Image">
+                <h3> Bug Bouty </h3>
+                <p> 4.6 > 32K Learners { 24 hrs</p>
+                <p>Completion Certificate</p>
+                <button>View Course</button>
+                <button>Start Learning</button>
+            </div>
+           
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

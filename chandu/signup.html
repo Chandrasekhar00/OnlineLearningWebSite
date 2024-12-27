@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="log.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create an account</h1>
+        <form id="loginForm">
+            <label for="loginEmail">First Name:</label>
+            <input type="email" id="loginEmail" required>
+
+            <label for="loginEmail">Last Name:</label>
+            <input type="email" id="loginEmail" required>
+
+            <label for="loginEmail">Email:</label>
+            <input type="email" id="loginEmail" required>
+
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" required>
+
+
+            <button type="submit">Signup</button>
+            <p class="message">Do you have an account? <a href="http://127.0.0.1:5500/log.html" >Login</a></p>
+        </form>
+        
+        <form id="signupForm" style="display: none;">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            
+            <label for="signupEmail">Email:</label>
+            <input type="email" id="signupEmail" >
+
+            <label for="signupPassword">Password:</label>
+            <input type="password" id="signupPassword" required>
+
+            <button type="submit">Signup</button>
+        </form>
+    </div>
+
+    <script src="log.js">
+        document.getElementById('signupLink').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('signupForm').style.display = 'block';
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #5c5470;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+        width: 100%;
+        background-color: #5c5470;
+        color: #ffffff;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        height: 70px;
+        border-radius: 5px;
+    }
+
+    .navbar a {
+        color: #ffffff;
+        text-decoration: none;
+        margin: 0 25px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .navbar a:hover {
+        color: #dddddd;
+    }
+
+    .navbar .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .navbar .nav-links {
+        display: flex;
+        align-items: center;
+    }
+
+    .registration-container {
+        display: flex;
+        width: 90%;
+        max-width: 10000px;
+        height: 790px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        overflow: hidden;
+        margin-top: 80px; /* Added margin to push it below the navbar */
+    }
+
+    .registration-form {
+        width: 50%;
+        padding: 40px;
+        background-color: #dbd8e3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-img {
+        width: 120px;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 18px;
+        color: black;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .social-button {
+        width: 80%;
+        padding: 25px;
+        margin: 8px 0;
+        border: none;
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 12px;
+    }
+
+    .google { background-color: #de5246; }
+    .facebook { background-color: #3b5998; }
+    .linkedin { background-color: #0077b5; }
+    .apple { background-color: #333333; }
+    .email {
+        background-color: #ffffff;
+        color: #0073e6;
+        border: 1px solid #0073e6;
+    }
+
+    .email:hover {
+        background-color: #f0f0f0;
+    }
+
+    .social-button:hover {
+        opacity: 0.9;
+    }
+
+    .already-account {
+        font-size: 24px;
+        color: black;
+        margin-top: 30px;
+    }
+
+    .already-account a {
+        color: #0073e6;
+        text-decoration: none;
+    }
+
+    .already-account a:hover {
+        text-decoration: underline;
+    }
+
+    .registration-info {
+        width: 50%;
+        background-image: url('chandu8628244.jpg');
+        background-size: cover;
+        background-position: center;
+        color: #ffffff;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 20px;
+        position: relative;
+    }
+
+    #colorOfP {
+        color: white;
+        font-size: 24px;
+        text-align: center;
+        margin: 0;
+    }
+
+</style>
+<body>
+
+<!-- Navbar Section -->
+<div class="navbar">
+    <img src="created-by-ai-8672131_1280.png" height="60px">
+    <div class="nav-links">
+        <a href="http://127.0.0.1:5500/chandu/index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#contact">Contact Us</a>
+    </div>
+</div>
+
+<div class="registration-container">
+    <div class="registration-form">
+        <img src="created-by-ai-8672131_1280.png" alt="Logo" class="logo-img">
+        <h2>Register</h2>
+        <p>Tap on any option to create an account with CourseMaster.</p>
+        <button class="social-button google">Sign Up with Google</button>
+        <button class="social-button facebook">Sign Up with Facebook</button>
+        <button class="social-button linkedin">Sign Up with LinkedIn</button>
+        <button class="social-button apple">Sign Up with Apple</button>
+        <button class="social-button email">Sign Up with Email</button>
+        <p class="already-account">Already have an account? <a href="http://127.0.0.1:5500/chandu/log.html">Login</a></p>
+    </div>
+
+    <div class="registration-info">
+        <p id="colorOfP">Get started with your immersive learning experience</p>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.social-button').forEach(button => {
+        button.addEventListener('click', () => {
+            alert(`You clicked on ${button.textContent}`);
+        });
+    });
+
+    document.querySelector('.already-account a').addEventListener('click', () => {
+        alert("Redirecting to Login page.");
+    });
+</script>
+
+</body>
+</html>
